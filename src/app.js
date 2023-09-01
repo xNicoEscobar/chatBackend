@@ -22,6 +22,9 @@ const mensajes = [];
 
 socketServer.on('connection', socket => {
     console.log('Se conectó el usuario', socket.id);
-    socket.on('mensaje', (data) => mensajes.push(data));
-    socketServer.emit('nuevo_mensaje', mensajes);
+    socket.on('mensaje', (data) => {
+        mensajes.push(data);
+        console.log(mensajes);
+        socketServer.emit('nuevo_mensaje', mensajes);
+    });
 });

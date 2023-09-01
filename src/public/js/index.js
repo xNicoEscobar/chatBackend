@@ -25,7 +25,7 @@ Swal.fire({
 
 
 
-socket.on('nuevoMensaje', (data) => {
+socket.on('nuevo_mensaje', (data) => {
  const mensajes = data.map(({user, mensaje}) => {
   return `<p>${user} dijo: ${mensaje}</p>`;
  })
